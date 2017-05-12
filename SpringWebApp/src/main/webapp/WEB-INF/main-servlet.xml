@@ -5,7 +5,8 @@
 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
 	<bean name="/roster/*" class="com.jiangmin.web.RosterController" />
-
+	<bean name="/nominee/*" class="com.jiangmin.web.NomineeController" 
+			p:thanksViewName="nominee/thanks" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />

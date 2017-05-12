@@ -11,6 +11,7 @@
 			<li><a href="member.do?id=${status.index}"> <c:out
 						value="${member}"></c:out></a></li>
 		</c:forEach>
+
 	</ul>
 </body>
 </html>

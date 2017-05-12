@@ -22,13 +22,15 @@ public class RosterController {
 	}
 
 	@RequestMapping
-	public void list(Model model) {
+	public String list(Model model) {
 		model.addAttribute("memberList",members);
+		return("/roster/list");
 	}
 
 	@RequestMapping
-	public void member(@RequestParam("id") Integer id, Model model) {
+	public String member(@RequestParam("id") Integer id, Model model) {
 		model.addAttribute("member",members.get(id));
+		return("/roster/member");
 	}
 
 }
