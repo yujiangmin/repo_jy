@@ -1,2 +1,5 @@
+com\jiangmin\web\AccountForm.class
+com\jiangmin\web\NomineeController.class
 com\jiangmin\model\Member.class
+com\jiangmin\web\AccountController.class
 com\jiangmin\web\RosterController.class
