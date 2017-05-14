@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.jiangmin.model.Member;
 
 @Controller
+@RequestMapping(value = "/roster")
 public class RosterController {
 	private List<Member> members = new ArrayList<Member>();
 
@@ -21,13 +22,13 @@ public class RosterController {
 		members.add(new Member("Ringo", "Starr"));
 	}
 
-	@RequestMapping
+	@RequestMapping(value="list")
 	public String list(Model model) {
 		model.addAttribute("memberList",members);
 		return("/roster/list");
 	}
 
-	@RequestMapping
+	@RequestMapping(value="member")
 	public String member(@RequestParam("id") Integer id, Model model) {
 		model.addAttribute("member",members.get(id));
 		return("/roster/member");

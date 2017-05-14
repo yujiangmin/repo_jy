@@ -16,7 +16,7 @@
 			<form:input path="lastName" />
 		</div>
 		<div>
-			<input type="submit" value="Submit"></input>
+			<input type="submit" value="Submit" ></input>
 		</div>
 	</form:form>
 </body>

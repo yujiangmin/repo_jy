@@ -1,4 +1,4 @@
-package com.jiangmin.dao;
+package com.jiangmin.dao.hbn;
 
 import javax.inject.Inject;
 
@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.jiangmin.dao.AccountDao;
 import com.jiangmin.dao.hibernate.AbstractHbnDao;
 import com.jiangmin.domain.Account;
 

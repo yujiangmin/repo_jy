@@ -1,5 +1,6 @@
 package com.jiangmin.web;
 
+import javax.inject.Inject;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jiangmin.domain.Account;
+import com.jiangmin.service.AccountService;
 
 @Controller
 @RequestMapping(value = "/users")
@@ -24,6 +26,10 @@ public class AccountController {
 	private static final String VN_REG_OK = "redirect:registration_ok";
 	private static final Logger log = LoggerFactory.getLogger(AccountController.class);
 
+	
+	@Inject
+	private AccountService accountService;
+	
 	@RequestMapping(value = "new", method = RequestMethod.GET)
 	public String getRegistrationForm(Model model) {
 		model.addAttribute("account", new AccountForm());
