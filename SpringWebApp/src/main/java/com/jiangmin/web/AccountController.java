@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jiangmin.domain.Account;
+
 @Controller
 @RequestMapping(value = "/users")
 public class AccountController {
@@ -32,9 +34,23 @@ public class AccountController {
 	public String postRegistrationForm(@ModelAttribute("account") @Valid AccountForm form, BindingResult result) {
 		log.info("Created registration: {}" + form);
 		convertPasswordError(result);
+		accountService.registerAccount(
+				toAccount(form), form.getPassword(), result);
 		log.info("result.hasErrors()"+result.hasErrors());
 		return (result.hasErrors() ? VN_REG_FORM : VN_REG_OK);
 	}
+	
+	private static Account toAccount(AccountForm form) {
+		Account account = new Account();
+		account.setUsername(form.getUsername());
+		account.setFirstName(form.getFirstName());
+		account.setLastName(form.getLastName());
+		account.setEmail(form.getEmail());
+		account.setMarketingOk(form.isMarketingOk());
+		account.setAcceptTerms(form.getAcceptTerms());
+		account.setEnabled(true);
+		return account;
+		}
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
