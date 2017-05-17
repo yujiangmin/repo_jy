@@ -792,7 +792,8 @@ Code: https://github.com/springinpractice
 					</executions>
 				</plugin>
 				
-				<!-- This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!-- This plugin's configuration is used to store Eclipse m2e settings only. 
+				It has no influence on the Maven build itself.-->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -807,6 +808,7 @@ Code: https://github.com/springinpractice
 										<versionRange>[1.5,)</versionRange>
 										<goals>
 											<goal>add-test-resource</goal>
+											<goal>add-test-source</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>
@@ -846,7 +848,6 @@ Code: https://github.com/springinpractice
 	<!-- =========================================================================================================== -->
 	
 	<repositories>
-	
 		<!-- SpringSource EBR repos -->
 		<repository>
 			<id>com.springsource.repository.bundles.release</id>
