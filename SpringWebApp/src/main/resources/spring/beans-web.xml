@@ -18,6 +18,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 	<mvc:view-controller path="/" view-name="redirect:/login.html" />
 	<mvc:view-controller path="/login.html" view-name="login"/>
 	<mvc:view-controller path="/home.html" view-name="extras/home"/>
+	<mvc:view-controller path="/login-required.html" view-name="loginRequired"/>
+	<mvc:view-controller path="/login-failed.html" view-name="loginFailed"/>
 	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
